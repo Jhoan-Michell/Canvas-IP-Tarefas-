@@ -11,11 +11,11 @@ Triângulo Obtusângulo: possui um ângulo obtuso. (maior que90º)
 Triângulo Acutângulo: possui três ângulos agudos. (menor que 90º
 """
 
-print("Digite o Valor do Primer Angulo: ")
+print("Digite o Valor do Primer Angulo ")
 Angulo1 = float(input(":"))
-print("Digite o Valor do Segundo Angulo: ")
+print("Digite o Valor do Segundo Angulo ")
 Angulo2 = float(input(":"))
-print("Digite o Valor do ultimo Angulo: ")
+print("Digite o Valor do ultimo Angulo ")
 Angulo3 = float(input(":"))
 
 #----------- Triângulo Retângulo: possui um ângulo reto (igual a 90º) ------#

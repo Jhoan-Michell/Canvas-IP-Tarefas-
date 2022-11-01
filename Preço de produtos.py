@@ -1,90 +1,58 @@
-#Algoritmo, Tarefa 3. Preço de produtos (FOR)
+#Algoritmo, Tarefa 3. Preço de produtos
 #Dev: Jhoan Michell Guzman Corrales
 #Data: 01/08/2022
 
 """
 Faça um programa que receba o preço, a categoria (1 – limpeza; 2 – alimentação; ou 3 – vestuário)
  e a situação (R – produtos que necessitam de refrigeração; e N – produtos que não necessitam de refrigeração).
- Calcule e mostre:
-O valor do aumento, usando as regras que se seguem.
+
 """
+precoComAumento = novoPreco = 0
+categoria = int
+imposto = 0.08
+situacao = str
 
-Preco = PrecoComAumento = Imposto = float
-Categoria = int
-Imposto = 0.08
-Situacao = str
+preco = float(input("Digite o Preço do producto: "))
+categoria = int(input("(1- Limpeza) (2 - Alimentação) (3 - Vestuario) \n Digite a Categoria do Producto:"))
 
-Preco = float(input("Digite o Preço do pruducto: "))
-   #-------------------------------------- Categotia do producto ----------------------------
-print("Digite a Categoria do Producto: ")
-print("(1 - Limpeza) (2 - Alimentação) (3 - Vestuario)")
-Categoria = int(input("Digite a Categoria do Producto: "))
-   #------------------------------------------------------------------------------------------
-
-if Preco <= 25 and Categoria == 1:
-   PrecoComAumento = Preco * 1.05
-   NovoPreco = PrecoComAumento * (1 - Imposto)
-   if NovoPreco <= 50:
-          print("Barato")
-   elif NovoPreco > 50 and NovoPreco < 120:
-          print("Normal")
-   else:
-          print("Caro")
-
-elif Categoria == 2 or Situacao == "R":
-   print("Situação: (R – produtos que necessitam de refrigeração); e (N – produtos que não necessitam de refrigeração).")
-   Situacao = str(input("Digite Situaçao do Producto: "))
-   PrecoComAumento = Preco * 1.08
-   NovoPreco = PrecoComAumento * (1 - 0.05)
-   if NovoPreco <= 50:
-         print("Barato")
-   elif NovoPreco > 50 and NovoPreco < 120:
-         print("Normal")
-   else:
-         print("Caro")
-else:
-    PrecoComAumento = Preco * 1.10
-    NovoPreco = PrecoComAumento * (1 - Imposto)
-    if NovoPreco <= 50:
-         print("Barato")
-    elif NovoPreco > 50 and NovoPreco < 120:
-         print("Normal")
+if preco <= 25:
+    if categoria == 1:
+         precoComAumento = preco * 1.05
+         novoPreco = precoComAumento * (1 - imposto)
+    elif categoria == 2:
+         situacao = str(input("(R – produtos que necessitam de refrigeração); e \n(N – produtos que não necessitam de refrigeração).\n Digite Situaçao do Producto: "))
+    elif categoria == 2 and situacao == "R":
+         precoComAumento = preco * 1.08
+         novoPreco = precoComAumento * (1 - 0.05)
+    elif categoria == 2 and situacao == "N":
+         precoComAumento = preco * 1.10
+         novoPreco = precoComAumento * (1 - 0.05)
     else:
-         print("Caro")
+         precoComAumento = preco * 1.10
+         novoPreco = precoComAumento * (1 - imposto)
 
- #------------------------------------ Mayor que 25 ------------------------------
-
-if Preco > 25 and Categoria == 1:
-   PrecoComAumento = Preco * 1.12
-   NovoPreco = PrecoComAumento * (1 - Imposto)
-   if NovoPreco <= 50:
-           print("Barato")
-   elif NovoPreco > 50 and NovoPreco < 120:
-           print("Normal")
-   else:
-           print("Caro")
-
-elif Preco < 25 and Categoria == 2 or Situacao == "R":
-   PrecoComAumento = Preco * 1.15
-   NovoPreco = PrecoComAumento * (1 - Imposto)
-   if NovoPreco <= 50:
-           print("Barato")
-   elif NovoPreco > 50 and NovoPreco < 120:
-           print("Normal")
-   else:
-           print("Caro")
-
-else:
-    PrecoComAumento = Preco * 1.18
-    NovoPreco3 = PrecoComAumento * (1 - Imposto)
-    if NovoPreco <= 50:
-           print("Barato")
-    elif NovoPreco > 50 and NovoPreco < 120:
-           print("Normal")
+if preco > 25:
+    if categoria == 1:
+       precoComAumento = preco * 1.12
+       novoPreco = precoComAumento * (1 - imposto)
+    elif categoria == 2:
+         situacao = str(input("(R – produtos que necessitam de refrigeração); e \n(N – produtos que não necessitam de refrigeração).\n Digite Situaçao do Producto: "))
+    elif categoria == 2 and situacao == "R":
+         precoComAumento = preco * 1.15
+         novoPreco = precoComAumento * (1 - imposto)
+    elif categoria == 2 and situacao == "N":
+         precoComAumento = preco * 1.18
+         novoPreco = precoComAumento * (1 - imposto)
     else:
-           print("Caro")
+         precoComAumento = preco * 1.18
+         novoPreco = precoComAumento * (1 - imposto)
 
-
+if novoPreco <= 50:
+    print("Clasificação de producto: Barato.")
+elif novoPreco >50 and novoPreco <= 120:
+     print("Clasificação de producto: Normal.")
+else:
+     print("Clasificação de producto: Caro.")
 
 
 
